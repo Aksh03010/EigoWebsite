@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio | White Studio 3D</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Ambient Grid and Light Background -->
+    <div class="studio-bg">
+        <div class="light-source"></div>
+        <div class="ambient-particles" id="particles"></div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app">
+
+        <!-- Header / Navigation Bar -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-dot"></span> PORTFOLIO
+            </div>
+            <nav class="main-nav">
+                <button class="nav-link active" data-target="home">Home Scene</button>
+                <button class="nav-link" data-target="about">About Me</button>
+                <button class="nav-link" data-target="response1">Conditioned for Chaos</button>
+                <button class="nav-link" data-target="response2">Whispering Culture</button>
+                <button class="nav-link" data-target="cited">Works Cited</button>
+            </nav>
+        </header>
+
+        <!-- 3D Viewport Scene -->
+        <main class="viewport-container" id="viewport">
+            <div class="scene-instruction">
+                <span class="mouse-icon">🖱️</span> Move mouse to look around • Hover boxes to open • Click to enter
+            </div>
+
+            <div class="world" id="world">
+
+                <!-- Floor Grid -->
+                <div class="floor">
+                    <div class="grid-texture"></div>
+                    <div class="floor-shadows"></div>
+                </div>
+
+                <!-- Cyclorama (Curved studio backdrop) -->
+                <div class="cyclorama"></div>
+
+                <!-- 3D Boxes Container -->
+                <div class="boxes-group">
+
+                    <!-- Box 1: About Me -->
+                    <div class="box-3d-wrapper" id="wrapper-about" style="--box-index: 0;">
+                        <!-- Floating Content Spilling Out (Hidden by default, slides up on hover) -->
+
+
+                        <!-- The 3D Cube/Box itself -->
+                        <div class="box-3d" data-destination="about">
+                            <div class="face front"><span>About Me</span></div>
+                            <div class="face back"></div>
+                            <div class="face left"></div>
+                            <div class="face right"></div>
+                            <div class="face top">
+                                <div class="lid-handle"></div>
+                            </div>
+                            <div class="face bottom"></div>
+                        </div>
+                        <div class="box-shadow-3d"></div>
+                        <div class="box-label">About Me</div>
+                    </div>
+
+                    <!-- Box 2: Written Response 1 -->
+                    <div class="box-3d-wrapper" id="wrapper-response1" style="--box-index: 1;">
+
+
+                        <div class="box-3d" data-destination="response1">
+                            <div class="face front"><span>Conditioned for Chaos</span></div>
+                            <div class="face back"></div>
+                            <div class="face left"></div>
+                            <div class="face right"></div>
+                            <div class="face top">
+                                <div class="lid-handle"></div>
+                            </div>
+                            <div class="face bottom"></div>
+                        </div>
+                        <div class="box-shadow-3d"></div>
+                        <div class="box-label">Conditioned for Chaos</div>
+                    </div>
+
+                    <!-- Box 3: Written Response 2 -->
+                    <div class="box-3d-wrapper" id="wrapper-response2" style="--box-index: 2;">
+
+                        <div class="box-3d" data-destination="response2">
+                            <div class="face front"><span>Whispering Culture</span></div>
+                            <div class="face back"></div>
+                            <div class="face left"></div>
+                            <div class="face right"></div>
+                            <div class="face top">
+                                <div class="lid-handle"></div>
+                            </div>
+                            <div class="face bottom"></div>
+                        </div>
+                        <div class="box-shadow-3d"></div>
+                        <div class="box-label">Whispering Culture</div>
+                    </div>
+
+                    <!-- Box 4: Works Cited -->
+                    <div class="box-3d-wrapper" id="wrapper-cited" style="--box-index: 3;">
+
+                        <div class="box-3d" data-destination="cited">
+                            <div class="face front"><span>Works Cited</span></div>
+                            <div class="face back"></div>
+                            <div class="face left"></div>
+                            <div class="face right"></div>
+                            <div class="face top">
+                                <div class="lid-handle"></div>
+                            </div>
+                            <div class="face bottom"></div>
+                        </div>
+                        <div class="box-shadow-3d"></div>
+                        <div class="box-label">Works Cited</div>
+                    </div>
+
+                </div> <!-- End boxes-group -->
+
+            </div> <!-- End world -->
+        </main>
+
+        <!-- Detailed Overlay Reader Views -->
+        <section class="detail-overlays-container" id="overlays">
+
+            <!-- ABOUT ME PAGE -->
+            <article class="overlay-panel" id="panel-about">
+                <button class="close-panel-btn">← Back to Gallery</button>
+                <div class="panel-content">
+                    <header class="panel-header">
+                        <span class="category">Section I</span>
+                        <h1>Positionality Statement & Identity</h1>
+                        <p class="subtitle">An exploration of cultural heritage, personal context, and scholarly
+                            interests.</p>
+                    </header>
+
+                    <div class="panel-layout">
+                        <!-- Left Column: Main Text Content -->
+                        <div class="text-column">
+                            <!-- User Content Block: Paste your positionality statement below -->
+                            <!-- START OF ABOUT ME CONTENT -->
+                            <section class="user-written-content">
+                                <p class="lead-text">
+                                    Welcome! This page outlines my academic positionality—the unique intersection of
+                                    culture, experiences, and background that shapes how I read, write, and engage with
+                                    the world.
+                                </p>
+                                <h3>Who I Am</h3>
+                                <p>
+                                    As a writer and student, my work is directly influenced by my cultural heritage and
+                                    the community in which I was raised. I grew up navigating multiple cultural
+                                    boundaries, which fostered a deep fascination with how language serves as both a
+                                    barrier and a bridge.
+                                </p>
+                                <p>
+                                    My academic interests lie at the intersection of media study, rhetoric, and creative
+                                    writing. I believe that understanding our positionality is crucial to academic
+                                    inquiry, as it allows us to identify our assumptions and open ourselves up to
+                                    diverse ways of knowing.
+                                </p>
+                                <h3>My Hobbies & Interests</h3>
+                                <p>
+                                    Outside of writing and research, I spend my time exploring photography, which allows
+                                    me to tell stories visually. I also enjoy hiking and immersing myself in nature,
+                                    finding that the quiet of the outdoors provides space to process complex concepts we
+                                    discuss in the classroom.
+                                </p>
+
+                                <div class="quote-card">
+                                    <p>"To write is to locate oneself in a larger conversation, recognizing that our
+                                        voice is shaped by every voice that came before us."</p>
+                                    <span class="quote-author">— Personal Reflection</span>
+                                </div>
+                            </section>
+                            <!-- END OF ABOUT ME CONTENT -->
+                        </div>
+
+                        <!-- Right Column: Media sidebar -->
+                        <aside class="media-column">
+                            <!-- Image 1 Placeholder -->
+                            <div class="image-box">
+                                <div class="image-inner placeholder-media">
+                                    <p>📷 [Insert Bio/Identity Photo Here]</p>
+                                    <span class="tip-text">Recommended size: 800x600px, representing your background or
+                                        workspace.</span>
+                                </div>
+                                <div class="image-caption">Figure 1.1: A visual representation of my creative workspace
+                                    and writing environment.</div>
+                            </div>
+
+                            <!-- Image 2 Placeholder -->
+                            <div class="image-box">
+                                <div class="image-inner placeholder-media">
+                                    <p>🌲 [Insert Hobby/Nature Photo Here]</p>
+                                    <span class="tip-text">Recommended size: 800x600px, showing hiking, travel, or
+                                        creative interests.</span>
+                                </div>
+                                <div class="image-caption">Figure 1.2: Capturing moments in nature, where I find
+                                    inspiration for creative essays.</div>
+                            </div>
+
+                            <!-- Creative Corner: Hobbies tags -->
+                            <div class="tags-widget">
+                                <h4>Interests & Focus Areas</h4>
+                                <div class="tag-cloud">
+                                    <span class="tag">Digital Rhetoric</span>
+                                    <span class="tag">Intersectional Identity</span>
+                                    <span class="tag">Visual Arts</span>
+                                    <span class="tag">Creative Writing</span>
+                                    <span class="tag">Nature & Hiking</span>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+
+            <!-- WRITTEN Conditioned for Chaos PAGE -->
+            <article class="overlay-panel" id="panel-response1">
+                <button class="close-panel-btn">← Back to Gallery</button>
+                <div class="panel-content">
+                    <header class="panel-header">
+                        <span class="category">Section II</span>
+                        <h1>Conditioned for Chaos</h1>
+                        <p class="subtitle">
+                        </p>
+                    </header>
+
+                    <div class="panel-layout">
+                        <!-- Left Column: Essay Content -->
+                        <div class="text-column">
+                            <!-- START OF RESPONSE 1 CONTENT -->
+                            <section class="user-written-content">
+                                <p class="lead-text">
+                                    Human beings possess a terrifying ability to adapt to cruelty, but I think that the
+                                    true tragedy of survival is the process of unlearning the defenses that keep us
+                                    alive at some point. In Michelle Good’s Five Little Indians, this psychological trap
+                                    is clear in Kenny, whose trauma responses actively destroy his ability to experience
+                                    safety. Kenny’s inability to accept stillness stems from his brutal childhood
+                                    conditioning at the Mission, a psychological phenomenon that perfectly mirrors the
+                                    paranoia viewers experience when an aggressively violent narrative like Vinland Saga
+                                    suddenly turns peaceful, ultimately explaining why he repeatedly abandons his own
+                                    moments of stability.
+
+                                </p>
+                                <h3>______</h3>
+                                <p>
+                                    To understand what Kenny's life is like as an adult, you have to understand the
+                                    baseline of survival he is forced to establish as a child. As a student at the
+                                    mission school, Kenny lives with a constant threat of physical harm, a perpetual
+                                    atmosphere of fear, and a necessity to be constantly vigilant. If someone as young
+                                    as Kenny lets their guard down or believes that there will ever be peace, it can
+                                    prove fatal. The survivors of this school system have to live with the reality of
+                                    having “not a day without fear” (Good 106). Because of how his brain is wired due to
+                                    his anticipation of cruelty from humans and the environment around them, Kenny
+                                    experiences chaos as his norm. When he is provided a safe, peaceful existence as an
+                                    adult, this stillness doesn't feel like a sanctuary, but a terrifying void of
+                                    unknowing.
+
+                                </p>
+                                <p>
+                                    My personal experience with media pacing shapes my understanding of this terrifying
+                                    relationship with stillness. While watching the anime Vinland Saga, a story heavily
+                                    defined by the constant warfare, brutality, and combat of Vikings, I experience a
+                                    sudden and jarring psychological shift during its much slower and peaceful second
+                                    season. Instead of feeling relaxed by the calm, I find myself feeling incredibly
+                                    uncomfortable and nervous. Because I am so conditioned as a viewer to expect
+                                    violence, when it suddenly disappears into silence, it feels suspicious. I become
+                                    completely paranoid, convinced that something terrible is about to happen at any
+                                    second. This anxiety perfectly shows what Kenny experiences in the real world; he
+                                    cannot enjoy the quiet because his mind is permanently bracing for an ambush.
+
+                                </p>
+                                <p>
+                                    Kenny's deep-rooted paranoia determines his avoidance of his feelings throughout the
+                                    entire book. His paranoia causes him to sabotage his own happiness by escaping. We
+                                    can see this clearly when Lucy gives birth to Kendra and they get married. Instead
+                                    of enjoying this stability, Kenny gets "the itch" and leaves his new wife and baby
+                                    for a job at a remote logging camp. This self-destructive habit is demonstrated
+                                    again later in the book when he comes back to help Lucy. After sharing a rare,
+                                    perfect day of peace, Kenny wakes up the next morning and silently runs away once
+                                    more. Just like a viewer nervously waiting for a sudden attack during a quiet
+                                    television scene, Kenny abandons his family because he believes that a calm
+                                    environment makes it inevitable that the next traumatic event is close behind.
+
+                                </p>
+                                <p>
+                                    Ultimately, escaping the physical walls of the Mission does not save Kenny, because
+                                    his mind remains entirely conditioned for chaos. The institutional abuse he suffers
+                                    as a child permanently alters his psychological baseline, turning the beautiful,
+                                    quiet moments of life into sources of unbearable anxiety. By looking through the
+                                    lens of media like Vinland Saga, it becomes clear that for a severely traumatized
+                                    person, peace is not comforting; it is a warning sign. Kenny stays constantly moving
+                                    because he is too afraid of what might happen if he finally stands still.
+
+                                </p>
+
+                                <div class="highlight-box">
+                                    <h4>Key Takeaway</h4>
+                                    <p>The digital hearth democratizes storytelling but introduces systemic challenges
+                                        in authority, citation, and communication styling. Our digital footprints become
+                                        key documents of our positionality.</p>
+                                </div>
+                            </section>
+                            <!-- END OF RESPONSE 1 CONTENT -->
+                        </div>
+
+                        <!-- Right Column: Media sidebar (Podcasts, articles, etc.) -->
+                        <aside class="media-column">
+
+                            <!-- Styled Podcast Audio Player Mockup -->
+                            <div class="podcast-card">
+                                <div class="podcast-badge">RELATED PODCAST</div>
+                                <h4>Episode 12: Digital Spaces and Cultural Identities</h4>
+                                <p class="podcast-desc">A discussion on how online subcultures develop distinct
+                                    linguistic patterns.</p>
+
+                                <!-- Custom Styled Audio Controls -->
+                                <div class="audio-player-mock">
+                                    <button class="play-btn" id="podcast-play-toggle">
+                                        <span class="play-icon">▶</span>
+                                    </button>
+                                    <div class="player-timeline">
+                                        <div class="progress-bar" style="width: 35%;"></div>
+                                        <div class="time-display">03:45 / 11:20</div>
+                                    </div>
+                                </div>
+                                <span class="tip-text">*Mockup player: You can link an actual audio file in
+                                    index.js.</span>
+                            </div>
+
+                            <!-- Image Placeholder -->
+                            <div class="image-box">
+                                <div class="image-inner placeholder-media">
+                                    <p>🌐 [Insert Digital Network Graphic]</p>
+                                    <span class="tip-text">Recommended: Conceptual graphic of connectivity, chat rooms,
+                                        or digital art.</span>
+                                </div>
+                                <div class="image-caption">Figure 2.1: Mapping interaction nodes in collaborative
+                                    digital workspaces.</div>
+                            </div>
+
+                            <!-- Image Placeholder 2 -->
+                            <div class="image-box">
+                                <div class="image-inner placeholder-media">
+                                    <p>📚 [Insert Literary/Book Image]</p>
+                                    <span class="tip-text">Recommended: Antique books next to a laptop screen.</span>
+                                </div>
+                                <div class="image-caption">Figure 2.2: The convergence of traditional academic texts and
+                                    digital platforms.</div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+
+            <!-- WRITTEN Whispering Culture PAGE -->
+            <article class="overlay-panel" id="panel-response2">
+                <button class="close-panel-btn">← Back to Gallery</button>
+                <div class="panel-content">
+                    <header class="panel-header">
+                        <span class="category">Section III</span>
+                        <h1>Written Whispering Culture</h1>
+                        <p class="subtitle">Decolonizing the Page: Power Dynamics in Modern Rhetoric.</p>
+                    </header>
+
+                    <div class="panel-layout">
+                        <!-- Left Column: Essay Content -->
+                        <div class="text-column">
+                            <!-- START OF RESPONSE 2 CONTENT -->
+                            <section class="user-written-content">
+                                <p class="lead-text">
+                                    This written response explores power dynamics in academic writing, questioning who
+                                    decides what constitutes "proper" English and how language standards can marginalize
+                                    diverse voices.
+                                </p>
+                                <h3>Language as a Mechanism of Exclusion</h3>
+                                <p>
+                                    Academic settings have long maintained rigid guidelines for composition,
+                                    prioritizing Standard Written English (SWE) as the default voice of intellectual
+                                    credibility. However, this standard is not politically neutral. It is deeply
+                                    entwined with historical systems of class and cultural dominance. By enforcing a
+                                    singular standard, institutions often exclude or delegitimize the linguistic styles,
+                                    dialects, and expressive patterns of historically marginalized groups.
+                                </p>
+                                <p>
+                                    Decolonizing the page requires us to expand our rhetorical definitions. It asks
+                                    educators and students to value diverse dialects, multi-lingual code-switching, and
+                                    alternative narrative structures as equally valid forms of analytical writing.
+                                </p>
+                                <h3>Classroom Dialogue & Reflective Poetry</h3>
+                                <p>
+                                    During our in-class debates, we observed how our peers' vernacular styles rich in
+                                    cultural context communicated deep sociological concepts with greater resonance than
+                                    formal prose. Language is alive; trying to lock it in a singular template limits the
+                                    expressive capacity of our scholarship.
+                                </p>
+
+                                <!-- Poetry Display Section -->
+                                <div class="poem-block">
+                                    <h4 class="poem-title">Mother Tongue</h4>
+                                    <p class="poem-line">They asked me to write in straight lines,</p>
+                                    <p class="poem-line">to box my history in black and white pages,</p>
+                                    <p class="poem-line">but my thoughts curve in colors,</p>
+                                    <p class="poem-line">singing in keys they cannot read.</p>
+                                </div>
+                            </section>
+                            <!-- END OF RESPONSE 2 CONTENT -->
+                        </div>
+
+                        <!-- Right Column: Media sidebar (Video, slides, articles) -->
+                        <aside class="media-column">
+
+                            <!-- Styled Interactive Video Box -->
+                            <div class="video-card">
+                                <div class="video-header">LECTURE PRESENTATION</div>
+                                <div class="video-player-mock">
+                                    <!-- Video Embed / Overlay -->
+                                    <div class="video-overlay" id="video-mock-overlay">
+                                        <span class="play-arrow">▶</span>
+                                        <p>Click to Watch Lecture Clip</p>
+                                    </div>
+                                    <div class="placeholder-media-video">
+                                        <p>🎬 [Insert Video File / Embed Here]</p>
+                                        <span class="tip-text">Link a MP4 or YouTube iframe in index.html.</span>
+                                    </div>
+                                </div>
+                                <div class="video-caption">Power & Dialects: Discussion on code-switching in academia.
+                                </div>
+                            </div>
+
+                            <!-- Image Placeholder -->
+                            <div class="image-box">
+                                <div class="image-inner placeholder-media">
+                                    <p>✍️ [Insert Typography / Writing Image]</p>
+                                    <span class="tip-text">Recommended: Hand-written ink on parchment or letters.</span>
+                                </div>
+                                <div class="image-caption">Figure 3.1: Historical manuscripts showcasing the fluidity of
+                                    early printing styles.</div>
+                            </div>
+
+                            <!-- Class Comments Widget -->
+                            <div class="discussion-widget">
+                                <h4>Classroom Feedback Snippets</h4>
+                                <div class="comment-bubble">
+                                    <p>"Standard language rules protect readability, but we have to ask: who's ease of
+                                        reading are we protecting?"</p>
+                                    <span class="comment-author">— Student Comment, Week 4</span>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+
+            <!-- WORKS CITED PAGE -->
+            <article class="overlay-panel" id="panel-cited">
+                <button class="close-panel-btn">← Back to Gallery</button>
+                <div class="panel-content">
+                    <header class="panel-header">
+                        <span class="category">Section IV</span>
+                        <h1>Works Cited & Bibliography</h1>
+                        <p class="subtitle">Complete bibliography of all sources, images, and literature used throughout
+                            this portfolio.</p>
+                    </header>
+
+                    <div class="panel-layout">
+                        <!-- Left Column: Citations List -->
+                        <div class="text-column">
+                            <!-- START OF WORKS CITED CONTENT -->
+                            <section class="user-written-content">
+                                <p class="lead-text">
+                                    All sources cited below correspond to materials referenced in Written Responses I &
+                                    II, as well as media assets integrated throughout the design layout.
+                                </p>
+
+                                <div class="citation-list">
+
+                                    <!-- Citation 1 -->
+                                    <div class="citation-item">
+                                        <span class="citation-marker">1</span>
+                                        <p class="citation-text">
+                                            <strong>Anzaldúa, Gloria.</strong> "How to Tame a Wild Tongue."
+                                            <em>Borderlands/La Frontera: The New Mestiza</em>, Aunt Lute Books, 1987,
+                                            pp. 53-64.
+                                        </p>
+                                    </div>
+
+                                    <!-- Citation 2 -->
+                                    <div class="citation-item">
+                                        <span class="citation-marker">2</span>
+                                        <p class="citation-text">
+                                            <strong>Gee, James Paul.</strong> "Social Linguistics and Literacies:
+                                            Ideology in Discourses." <em>Routledge</em>, 5th edition, 2015.
+                                        </p>
+                                    </div>
+
+                                    <!-- Citation 3 -->
+                                    <div class="citation-item">
+                                        <span class="citation-marker">3</span>
+                                        <p class="citation-text">
+                                            <strong>Young, Vershawn Ashanti.</strong> "Should Writers Use They Own
+                                            English?" <em>Iowa Journal of Cultural Studies</em>, vol. 12, no. 1, 2010,
+                                            pp. 110-117.
+                                        </p>
+                                    </div>
+
+                                    <!-- Citation 4 -->
+                                    <div class="citation-item">
+                                        <span class="citation-marker">4</span>
+                                        <p class="citation-text">
+                                            <strong>Online Podcast Reference.</strong> "Digital Spaces and Cultural
+                                            Identities." <em>Rhetorical Hearth Podcasts</em>, Series 3, Episode 12, 18
+                                            Oct. 2025.
+                                        </p>
+                                    </div>
+
+                                    <!-- Citation 5 -->
+                                    <div class="citation-item">
+                                        <span class="citation-marker">5</span>
+                                        <p class="citation-text">
+                                            <strong>Academic Presentation.</strong> "Dialects, Code-switching and
+                                            Linguistic Authority in Modern Classroom Spaces." Lecture clip recorded on
+                                            12 Mar. 2026.
+                                        </p>
+                                    </div>
+
+                                    <!-- Add more citation cards here -->
+                                </div>
+                            </section>
+                            <!-- END OF WORKS CITED CONTENT -->
+                        </div>
+
+                        <!-- Right Column: Sidebar info -->
+                        <aside class="media-column">
+                            <!-- Image Placeholder -->
+                            <div class="image-box">
+                                <div class="image-inner placeholder-media">
+                                    <p>📚 [Insert Academic Library / Bookshelf Graphic]</p>
+                                    <span class="tip-text">Recommended: Clean rows of books in a white-themed
+                                        library.</span>
+                                </div>
+                                <div class="image-caption">Figure 4.1: Archiving sources and reference literature.</div>
+                            </div>
+
+                            <div class="highlight-box alt-style">
+                                <h4>Academic Integrity</h4>
+                                <p>This portfolio is compiled in compliance with academic styling guides. All quotes,
+                                    multimedia clips, and classroom discussion materials have been referenced with
+                                    permissions.</p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </div> <!-- End App -->
+
+    <script src="index.js"></script>
+</body>
+
+</html>
